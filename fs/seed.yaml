@@ -1,29 +1,46 @@
-project: default
-source:
-  repoURL: 'https://github.com/zeynep-bilgehan/minikubes.git'
-  path: blue-website
-  targetRevision: HEAD
-destination:
-  server: 'https://kubernetes.default.svc'
-syncPolicy:
-  automated: {}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: blue-website
+spec:
+  destination:
+    name: ''
+    namespace: ''
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: blue-website
+    repoURL: 'https://github.com/zeynep-bilgehan/test.git'
+    targetRevision: HEAD
+  project: default
+
 ---
-project: default
-source:
-  repoURL: 'https://github.com/zeynep-bilgehan/minikubes.git'
-  path: test/overlays/grafana
-  targetRevision: HEAD
-destination:
-  server: 'https://kubernetes.default.svc'
-syncPolicy:
-  automated: {}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: grafana-ingress
+spec:
+  destination:
+    name: ''
+    namespace: ''
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: test/overlays/grafana
+    repoURL: 'https://github.com/zeynep-bilgehan/test.git'
+    targetRevision: HEAD
+  project: default
+
 ---
-project: default
-source:
-  repoURL: 'https://github.com/zeynep-bilgehan/minikubes.git'
-  path: test/overlays/argocd
-  targetRevision: HEAD
-destination:
-  server: 'https://kubernetes.default.svc'
-syncPolicy:
-  automated: {}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-ingress
+spec:
+  destination:
+    name: ''
+    namespace: ''
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: test/overlays/argocd
+    repoURL: 'https://github.com/zeynep-bilgehan/test.git'
+    targetRevision: HEAD
+  project: default
