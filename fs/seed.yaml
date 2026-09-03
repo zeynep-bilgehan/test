@@ -1,0 +1,29 @@
+project: default
+source:
+  repoURL: 'https://github.com/zeynep-bilgehan/minikubes.git'
+  path: blue-website
+  targetRevision: HEAD
+destination:
+  server: 'https://kubernetes.default.svc'
+syncPolicy:
+  automated: {}
+---
+project: default
+source:
+  repoURL: 'https://github.com/zeynep-bilgehan/minikubes.git'
+  path: test/overlays/grafana
+  targetRevision: HEAD
+destination:
+  server: 'https://kubernetes.default.svc'
+syncPolicy:
+  automated: {}
+---
+project: default
+source:
+  repoURL: 'https://github.com/zeynep-bilgehan/minikubes.git'
+  path: test/overlays/argocd
+  targetRevision: HEAD
+destination:
+  server: 'https://kubernetes.default.svc'
+syncPolicy:
+  automated: {}
