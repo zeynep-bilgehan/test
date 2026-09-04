@@ -9,7 +9,7 @@ spec:
     repoURL: https://github.com/zeynep-bilgehan/test.git
     targetRevision: HEAD
     path: green-website
-    repoURL: 'https://github.com/zeynep-bilgehan/minikube.git'
+    repoURL: 'https://github.com/zeynep-bilgehan/minikubes.git'
   destination:
     server: https://kubernetes.default.svc
     namespace: webservers
@@ -33,7 +33,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     path: blue-website
-    repoURL: 'https://github.com/zeynep-bilgehan/minikube.git'
+    repoURL: 'https://github.com/zeynep-bilgehan/minikubes.git'
     targetRevision: HEAD
   project: default
 
@@ -50,7 +50,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     path: test/overlays/grafana
-    repoURL: 'https://github.com/zeynep-bilgehan/minikube.git'
+    repoURL: 'https://github.com/zeynep-bilgehan/minikubes.git'
     targetRevision: HEAD
   project: default
 
@@ -67,6 +67,6 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     path: test/overlays/argocd
-    repoURL: 'https://github.com/zeynep-bilgehan/minikube.git'
+    repoURL: 'https://github.com/zeynep-bilgehan/minikubes.git'
     targetRevision: HEAD
   project: default
