@@ -1,6 +1,28 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
+  name: green-website
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/zeynep-bilgehan/test.git
+    targetRevision: main
+    path: green-website
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: webservers
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
   name: blue-website
   namespace: argocd
 spec:
