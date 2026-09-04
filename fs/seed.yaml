@@ -5,12 +5,11 @@ metadata:
   namespace: argocd
 spec:
   project: default
-
   source:
     repoURL: https://github.com/zeynep-bilgehan/test.git
-    targetRevision: main
+    targetRevision: HEAD
     path: green-website
-
+    repoURL: 'https://github.com/zeynep-bilgehan/test.git'
   destination:
     server: https://kubernetes.default.svc
     namespace: webservers
@@ -19,6 +18,8 @@ spec:
     automated:
       prune: true
       selfHeal: true
+
+
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
